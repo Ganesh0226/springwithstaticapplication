@@ -1,0 +1,28 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto17  # or corretto11, openjdk8, etc.
+    commands:
+      - echo Installing Maven
+      - apt-get update
+      - apt-get install -y maven
+
+  pre_build:
+    commands:
+      - echo Running Maven clean
+      - mvn clean
+
+  build:
+    commands:
+      - echo Building the project...
+      - mvn package -DskipTests
+
+  post_build:
+    commands:
+      - echo Build completed successfully.
+
+artifacts:
+  files:
+    - target/*.jar  # Adjust according to your output location
