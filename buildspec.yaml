@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      java: corretto17  # or corretto11, openjdk8, etc.
+      java: corretto17  
     commands:
       - echo Installing Maven...
       - yum update -y
@@ -25,4 +25,4 @@ phases:
 
 artifacts:
   files:
-    - target/*.jar  # Adjust according to your output location
+    - target/*.jar  
