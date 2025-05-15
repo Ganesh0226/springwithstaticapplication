@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      java: corretto17  
+      java: corretto17
     commands:
       - echo Installing Maven...
       - yum update -y
@@ -11,18 +11,23 @@ phases:
 
   pre_build:
     commands:
-      - echo Running Maven clean
+      - echo Cleaning project...
       - mvn clean
 
   build:
     commands:
-      - echo Building the project...
+      - echo Building the JAR...
       - mvn package -DskipTests
 
   post_build:
     commands:
-      - echo Build completed successfully.
+      - echo Build completed.
+      - mkdir -p build-output
+      - cp target/*.jar build-output/
+      - cp appspec.yml build-output/
+      - cp -r scripts build-output/
 
 artifacts:
   files:
-    - target/*.jar  
+    - build-output/**/*
+  discard-paths: yes
