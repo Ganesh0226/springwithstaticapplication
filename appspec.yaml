@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ec2-user/myapp
+    destination: /home/ec2-user/
 
 hooks:
   BeforeInstall:
@@ -12,7 +12,7 @@ hooks:
 
   AfterInstall:
     - location: scripts/install_dependencies.sh
-      timeout: 300
+      timeout: 60
       runas: ec2-user
 
   ApplicationStart:
