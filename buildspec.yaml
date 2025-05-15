@@ -22,12 +22,13 @@ phases:
   post_build:
     commands:
       - echo Build completed.
-      - mkdir -p build-output
+      - mkdir -p build-output/scripts
       - cp target/*.jar build-output/
-      - cp appspec.yaml build-output/
-      - cp -r scripts build-output/
+      - cp appspec.yml build-output/
+      - cp scripts/*.sh build-output/scripts/
+      - chmod +x build-output/scripts/*.sh
 
 artifacts:
+  base-directory: build-output
   files:
-    - build-output/**/*
-  discard-paths: yes
+    - '**/*'
