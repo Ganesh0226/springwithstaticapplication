@@ -3,7 +3,7 @@ os: linux
 files:
  - source: ganesh-build/scripts/*
     destination: /home/ec2-user/app/scripts
-  - source: ganesh-build/*.jar
+ - source: ganesh-build/*.jar
     destination: /home/ec2-user/app
 
 hooks:
