@@ -21,11 +21,9 @@ phases:
 
   post_build:
     commands:
-      - echo Post build steps...
-      - ls -R  
-      - cp target/*.jar ./
-      - cp appspec.yaml ./
+      - echo Build completed.
       - mkdir -p scripts
+      - cp target/*.jar ./
       - cp scripts/*.sh scripts/
       - chmod +x scripts/*.sh
 
