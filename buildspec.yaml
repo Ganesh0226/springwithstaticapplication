@@ -24,7 +24,7 @@ phases:
       - echo Build completed.
       - mkdir -p build-output
       - cp target/*.jar build-output/
-      - cp appspec.yaml build-output/
+      - cp springwithstaticapplication/appspec.yaml build-output/
       - cp -r scripts build-output/
 
 artifacts:
