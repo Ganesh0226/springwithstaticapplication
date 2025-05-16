@@ -1,21 +1,21 @@
 version: 0.0
 os: linux
 files:
-  - source: /*
+  - source: .
     destination: /home/ec2-user/app
 
 hooks:
   BeforeInstall:
-    - location: scripts/stop_server.sh
+    - location: /home/ec2-user/app/stop_server.sh
       timeout: 60
       runas: ec2-user
 
   AfterInstall:
-    - location: scripts/install_dependencies.sh
+    - location: /home/ec2-user/app/install_dependencies.sh
       timeout: 60
       runas: ec2-user
 
   ApplicationStart:
-    - location: scripts/start_server.sh
+    - location: /home/ec2-user/app/start_server.sh
       timeout: 60
       runas: ec2-user
