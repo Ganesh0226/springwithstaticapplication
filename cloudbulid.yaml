@@ -1,0 +1,13 @@
+options:
+  defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
+
+steps:
+  - name: '${_GAN_DOCKER_REPO_PATH}sonar:${_IMAGE_TAG}'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        echo "🧪 Running Maven build...."
+        mvn clean install
+
+        echo "✅ Build complete!"
