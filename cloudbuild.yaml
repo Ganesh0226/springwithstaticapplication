@@ -25,7 +25,7 @@ steps:
     args:
       - push
       - ${_GAN_WEB_REPO_PATH}${_SERVICE_NAME}:${_IMAGE_TAG}
-    - id: Redeploy to Cloud Run
+  - id: Redeploy to Cloud Run
     name: ${_CLOUD_RUN_REPO_PATH}:${_IMAGE_TAG}
     args:
       - --action
