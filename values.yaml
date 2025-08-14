@@ -1,0 +1,15 @@
+service:
+  name: my-cloud-run-service
+  port: 8080
+
+image:
+  repository: us-central1-docker.pkg.dev/polished-core-463907-m5/frontend/frontend
+  tag: latest
+
+resources:
+  cpu: 1
+  memory: 512Mi
+
+cloudRun:
+  region: us-central1
+  allowUnauthenticated: true
