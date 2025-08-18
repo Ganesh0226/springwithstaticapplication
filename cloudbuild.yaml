@@ -8,9 +8,9 @@ steps:
     args:
       - -c
       - |
-        echo "🧪 Running Maven build.."
+        echo " Running Maven build.."
         mvn clean install
-        echo "✅ Build complete!"
+        echo " Build complete!"
 
   - id: Build Docker image
     name: gcr.io/cloud-builders/docker
