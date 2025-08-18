@@ -1,6 +1,6 @@
 service:
   name: my-cloud-run-service
-  port: 8080
+  port: 7000
 
 image:
   repository: us-central1-docker.pkg.dev/polished-core-463907-m5/frontend/frontend
