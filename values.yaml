@@ -12,4 +12,5 @@ resources:
 
 cloudRun:
   region: us-central1
+  platform: managed
   allowUnauthenticated: true
