@@ -32,6 +32,7 @@ steps:
       - service
       - --action
       - deploy
+      
   - name: gcr.io/cloud-builders/curl
     args: ["-s", "ifconfig.me"]
 
