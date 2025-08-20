@@ -20,8 +20,6 @@ steps:
   - name: ${_SONAR_REPO_PATH}/sonar:${_IMAGE_TAG}
     secretEnv:
       - SONAR_TOKEN
-    env:
-      - SONAR_TOKEN
 
   - id: Build Docker image
     name: gcr.io/cloud-builders/docker
