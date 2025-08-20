@@ -22,8 +22,6 @@ steps:
       - SONAR_TOKEN
     env:
       - SONAR_TOKEN
-    waitFor:
-      - Build application
 
   - id: Build Docker image
     name: gcr.io/cloud-builders/docker
