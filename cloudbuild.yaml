@@ -23,7 +23,6 @@ steps:
       - SONAR_TOKEN
     dir: "/workspace"
     args:
-      - sonar-scanner
       - -Dproject.settings=/workspace/sonar-project.properties
 
   - id: Build Docker image
