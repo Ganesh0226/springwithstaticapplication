@@ -19,6 +19,7 @@ steps:
 
   - id: Sonar scan
     name: ${_SONAR_REPO_PATH}/sonar:${_IMAGE_TAG}
+    dir: /workspace
     secretEnv:
       - SONAR_TOKEN
     waitFor:
