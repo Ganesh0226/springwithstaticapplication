@@ -13,7 +13,7 @@ steps:
     args:
       - -c
       - |
-        echo " Running Maven build."
+        echo " Running Maven build..."
         mvn clean install
         echo " Build complete!"
 
