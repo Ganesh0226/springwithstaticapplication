@@ -22,7 +22,7 @@ steps:
     secretEnv:
       - SONAR_TOKEN
     waitFor:
-      - Build Application
+      - Run Maven build
 
   - id: Build Docker image
     name: gcr.io/cloud-builders/docker
