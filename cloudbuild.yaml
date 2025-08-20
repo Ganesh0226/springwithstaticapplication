@@ -4,7 +4,7 @@ options:
 availableSecrets:
   secretManager:
     - versionName: projects/937418172711/secrets/sonar-token/versions/latest
-      env: 'SONAR_TOKEN'
+      env: '_SONAR_TOKEN'
 
 steps:
   - id: Run Maven build
