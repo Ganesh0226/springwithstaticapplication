@@ -1,6 +1,11 @@
 options:
   defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
 
+availableSecrets:
+  secretManager:
+    - versionName: projects/937418172711/secrets/sonar-token/versions/latest
+      env: 'SONAR_TOKEN'
+
 steps:
   - id: Run Maven build
     name: gcr.io/cloud-builders/mvn
@@ -11,6 +16,10 @@ steps:
         echo " Running Maven build.."
         mvn clean install
         echo " Build complete!"
+
+  - name: ${_SONAR_REPO_PATH}/sonar:${_IMAGE_TAG}
+    env:
+      - SONAR_TOKEN=${_SONAR_TOKEN}
 
   - id: Build Docker image
     name: gcr.io/cloud-builders/docker
@@ -33,6 +42,4 @@ steps:
       - --action
       - deploy
       
-  - name: gcr.io/cloud-builders/curl
-    args: ["-s", "ifconfig.me"]
 
