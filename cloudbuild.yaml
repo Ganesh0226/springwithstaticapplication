@@ -21,9 +21,8 @@ steps:
     name: ${_SONAR_REPO_PATH}/sonar:${_IMAGE_TAG}
     secretEnv:
       - SONAR_TOKEN
-    dir: "/workspace"
-    args:
-      - -Dproject.settings=/workspace/sonar-project.Properties
+    waitFor:
+      - Build Application
 
   - id: Build Docker image
     name: gcr.io/cloud-builders/docker
