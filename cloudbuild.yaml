@@ -4,7 +4,7 @@ options:
 availableSecrets:
   secretManager:
     - versionName: projects/937418172711/secrets/sonar-token/versions/latest
-      env: '_SONAR_TOKEN'
+      env: 'SONAR_TOKEN'
 
 steps:
   - id: Run Maven build
@@ -19,7 +19,7 @@ steps:
 
   - name: ${_SONAR_REPO_PATH}/sonar:${_IMAGE_TAG}
     env:
-      - SONAR_TOKEN=${_SONAR_TOKEN}
+      - SONAR_TOKEN=${SONAR_TOKEN}
 
   - id: Build Docker image
     name: gcr.io/cloud-builders/docker
